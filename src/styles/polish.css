@@ -1,0 +1,137 @@
+.audio-spectrum {
+  display: block;
+  width: 100%;
+  height: 70px;
+  margin: 18px 0;
+}
+.audio-spectrum.large-spectrum {
+  width: 45%;
+  height: 180px;
+}
+.completion {
+  text-align: center;
+  position: relative;
+  padding: 20px 0;
+}
+.completion h2 {
+  font-size: 27px;
+}
+.completion-check {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  color: var(--accent);
+  animation: check-pop 0.35s ease-out;
+}
+.confetti {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.confetti i {
+  position: absolute;
+  top: -10px;
+  width: 5px;
+  height: 9px;
+  animation: confetti-fall 1.8s ease-out both;
+  border-radius: 2px;
+}
+.library-player {
+  margin-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.library-player h4 {
+  overflow-wrap: anywhere;
+}
+.library-player .row > span {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.library-player .check {
+  font-size: 10px;
+}
+.library-player input[type="range"] {
+  min-width: 40px;
+}
+.calendar-slot .event-chip {
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  height: var(--event-height);
+  top: var(--event-top);
+  min-height: 24px;
+  align-items: flex-start;
+  overflow: hidden;
+}
+.event-resize {
+  position: absolute !important;
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+  height: 9px !important;
+  min-height: 9px !important;
+  cursor: ns-resize !important;
+  touch-action: none;
+  border-radius: 3px !important;
+}
+.event-resize::after {
+  content: "";
+  display: block;
+  margin: auto;
+  width: 20px;
+  height: 2px;
+  background: var(--muted);
+  opacity: 0.5;
+}
+.month-grid .event-resize,
+.agenda .event-resize {
+  display: none;
+}
+.streak-strip {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  gap: 5px;
+  margin: 15px 0;
+}
+.streak-strip span {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: var(--elevated);
+}
+.streak-strip span.active-day {
+  background: var(--accent);
+}
+@keyframes confetti-fall {
+  from {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(230px) rotate(240deg);
+    opacity: 0;
+  }
+}
+@media (max-width: 700px) {
+  .audio-spectrum.large-spectrum {
+    position: absolute;
+    right: -20px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+  .completion h2 {
+    font-size: 24px;
+  }
+  .calendar-slot .event-chip {
+    height: calc(var(--event-height) * 70 / 66);
+    top: calc(var(--event-top) * 70 / 66);
+  }
+}
+.stats-grid .stat > strong {
+  white-space: nowrap;
+  font-size: clamp(20px, 2vw, 27px);
+}
