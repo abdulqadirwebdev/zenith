@@ -2,6 +2,10 @@
 
 A local-first student productivity application built with React, TypeScript and Vite. Tasks, focus history, notes, flashcards, events, preferences and imported audio live in IndexedDB. There is no account, backend, cloud sync, streaming integration or AI scheduler.
 
+**Live site:** https://abdulqadirwebdev.github.io/zenith/
+
+**Repository:** https://github.com/abdulqadirwebdev/zenith
+
 ## Run locally
 
 Use Node.js 22.12+ (developed on Node 24) and npm.
@@ -93,7 +97,7 @@ For a local subpath build, set `VITE_BASE_PATH=/zenith/` before `npm run build`.
 
 Run `npm run build` and deploy the generated **dist/** directory to any static HTTPS host (for example a static Nginx directory, Cloudflare Pages, Netlify or Firebase Hosting). Use the root base path or set Vite's `base` for a subdirectory deployment. No API keys or environment variables are required. HTTPS is required for notification and wake-lock support outside localhost.
 
-No deployment has been performed automatically. Hosting does not provide data synchronization: each visitor still has an independent browser-local workspace.
+GitHub Pages deploys automatically when changes are pushed to `main`. Hosting does not provide data synchronization: each visitor still has an independent browser-local workspace.
 
 ## Design and verification artifacts
 
